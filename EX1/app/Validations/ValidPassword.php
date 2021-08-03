@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-include_once('ValidationInterface.php');
+namespace Superlogica\Validations;
 
 class ValidPassword implements ValidationInterface
 {

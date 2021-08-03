@@ -2,9 +2,11 @@
 
 declare(strict_types = 1);
 
-include_once('validations/ValidEmail.php');
-include_once('validations/ValidPassword.php');
-include_once('validations/ValidZip.php');
+namespace Superlogica;
+
+use Superlogica\Validations\ValidEmail;
+use Superlogica\Validations\ValidPassword;
+use Superlogica\Validations\ValidZip;
 
 /**
  * Class SignUpValidator

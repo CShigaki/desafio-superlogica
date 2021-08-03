@@ -2,8 +2,14 @@
 
 declare(strict_types=1);
 
-include_once('ValidationInterface.php');
+namespace Superlogica\Validations;
 
+/**
+ * Since this is actually making a request to an external service and I'm not sure how to mock curl
+ * this validator will not be tested.
+ *
+ * Class ValidZip
+ */
 class ValidZip implements ValidationInterface
 {
     /**

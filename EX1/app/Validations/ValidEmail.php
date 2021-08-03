@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-include_once('ValidationInterface.php');
+namespace Superlogica\Validations;
 
 class ValidEmail implements ValidationInterface
 {
@@ -13,6 +13,7 @@ class ValidEmail implements ValidationInterface
      */
     public static function validate(string $dataToValidate): bool
     {
-        return $dataToValidate === filter_var($dataToValidate, FILTER_VALIDATE_EMAIL);
+        return !($dataToValidate === '') &&
+            $dataToValidate === filter_var($dataToValidate, FILTER_VALIDATE_EMAIL);
     }
 }

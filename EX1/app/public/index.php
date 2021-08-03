@@ -1,3 +1,10 @@
+<?php
+require_once dirname(__DIR__) . '/../vendor/autoload.php';
+
+use Superlogica\SignUpValidator;
+use Superlogica\Helpers;
+
+?>
 <html>
     <head>
       <title>Teste Superlogica</title>
@@ -5,8 +12,6 @@
     </head>
 
     <?php
-    require_once('../Helpers.php');
-    require_once('../SignUpValidator.php');
     $errors = [];
     $id = '';
 

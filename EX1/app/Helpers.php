@@ -2,6 +2,10 @@
 
 declare(strict_types = 1);
 
+namespace Superlogica;
+
+use PDO;
+
 /**
  * Class Helpers
  *
