@@ -1,0 +1,10 @@
+USE superlogica;
+
+CREATE TABLE cadastro (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(256) NOT NULL,
+  login VARCHAR(256) NOT NULL,
+  password VARCHAR(64) NOT NULL,
+  zip_code VARCHAR(8) NOT NULL,
+  email VARCHAR(256) NOT NULL
+);
