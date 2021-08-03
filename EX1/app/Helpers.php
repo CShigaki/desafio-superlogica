@@ -24,27 +24,16 @@ class Helpers
      */
     public static function select(string $nome_da_tabela, array $informacao): bool
     {
-        // Helpers is a generic class, therefore it does not know anything about the table the user is trying to accesss.
-        // Taking this in consideration, this method is completely generic and depends on the data passed to informacao.
         $pdo = new PDO('mysql:dbname=superlogica;host=mysql', 'root', 'root', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-        $keys = array_keys($informacao);
-        $query = '';
-        // Mounts the query if needed
-        foreach ($keys as $index => $columnName) {
-            if (0 === $index) {
-                $query .= "WHERE {$columnName} = :{$columnName}";
-                continue;
-            }
-
-            $query .= " AND {$columnName} = :{$columnName}";
-        }
-
         // We don't need to worry about SQL injections. PDO handles it when usinng statements.
         // On a side note tho, you can't set the table name using statements, as the statements would envelop it in '
         // so the way this method signature is makes it vulnerable to sql injection
-        $statement = $pdo->prepare("SELECT * FROM {$nome_da_tabela} {$query}");
+        $statement = $pdo->prepare("SELECT * FROM {$nome_da_tabela} WHERE login = :login OR email = :email");
         // Sets the params for the query
-        $statement->execute($informacao);
+        $statement->execute([
+            'login' => $informacao['login'] ?? '',
+            'email' => $informacao['email'] ?? '',
+        ]);
 
         return $statement->rowCount() > 0;
     }

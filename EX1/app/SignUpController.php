@@ -46,7 +46,11 @@ class SignUpController
     {
         $errors = $this->validateSignUpValues($formValues);
 
-        if (Helpers::select('cadastro', $formValues)) {
+        $payloadToCheckForDup = [
+            'login' => $formValues['login'],
+            'email' => $formValues['email'],
+        ];
+        if (Helpers::select('cadastro', $payloadToCheckForDup)) {
             $errors['general'] = 'Email ou login duplicados';
         }
 
