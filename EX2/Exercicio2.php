@@ -20,8 +20,9 @@ $implodedArray = implode(',', $array);
 
 // 5) Crie um novo array a partir da variável no formato de string que foi criada e destrua o array anterior
 $implodedArrayCopy = explode(',', $implodedArray);
-// O explode vai recriar o array tendo os números como strings. convertemos de volta pra int aqui.
+// The explode will recreate the array with the numbers as strings. We convert it back to int here.
 array_walk($implodedArrayCopy, fn (string &$number, int $key) => $number = (int) $number);
+// And destroy the old array
 unset($implodedArray);
 
 // 6) Crie uma condição para verificar se existe o valor 14 no array
