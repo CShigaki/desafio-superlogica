@@ -22,7 +22,7 @@ O enunciado deixa explícito que conexões com banco não devem ser criadas mas 
 ### Como Rodar
 
 Depois que o Docker, o docker-compose e o composer estiverem instalados rode o comando `composer install`.
-Após o término do install se certifique que vc não tem nenhuma outra aplicação rodando na porta 80 e rode o comando `make start` ou `docker-compose up --build --force-recreate` no seu terminal.
+Após o término do install se certifique que vc não tem nenhuma outra aplicação rodando na porta 80 e rode o comando `make start` ou `docker-compose up --build --remove-orphans --force-recreate --renew-anon-volumes` no seu terminal.
 
 Quando os containers terminarem de inicializar vc pode acessar a página acessando seu localhost.
 

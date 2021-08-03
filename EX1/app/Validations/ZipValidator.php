@@ -5,8 +5,7 @@ declare(strict_types=1);
 namespace Superlogica\Validations;
 
 /**
- * Since this is actually making a request to an external service and I'm not sure how to mock curl
- * this validator will not be tested.
+ * Since I'm not using dependency injection and I'm not sure how to mock curl, this class will not be tested.
  *
  * Class ValidZip
  */
@@ -17,7 +16,7 @@ class ZipValidator implements ValidatorInterface
      *
      * @return bool
      */
-    public static function validate(string $dataToValidate): bool
+    public function validate(string $dataToValidate): bool
     {
         // I would normally get a Guzzle client through dependency injection instead of using curl
         // but I ended up using because this is not using zend.

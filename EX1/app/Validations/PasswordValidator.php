@@ -11,7 +11,7 @@ class PasswordValidator implements ValidatorInterface
      *
      * @return bool
      */
-    public static function validate(string $dataToValidate): bool
+    public function validate(string $dataToValidate): bool
     {
         // Minimum 8 characters, at least 1 letter and 1 number
         $hasNumbers = 1 === preg_match('/\d/', $dataToValidate);

@@ -1,7 +1,7 @@
 <?php
 require_once dirname(__DIR__) . '/../vendor/autoload.php';
 
-use Superlogica\SignUpValidator;
+use Superlogica\SignUpController;
 use Superlogica\Helpers;
 
 ?>
@@ -16,13 +16,15 @@ use Superlogica\Helpers;
     $id = '';
 
     if (isset($_POST['submit'])) {
-        $validator = new SignUpValidator();
+        $validator = new SignUpController();
         unset($_POST['submit']);
 
-        $errors = $validator->validateSignUpValues($_POST);
+        $signUpResponse = $validator->signUp($_POST);
 
-        if (0 === count($errors)) {
-            $id = Helpers::insert('cadastro', $_POST);
+        if (isset($signUpResponse['id'])) {
+            $id = $signUpResponse['id'];
+        } else {
+            $errors = $signUpResponse;
         }
     }
     ?>

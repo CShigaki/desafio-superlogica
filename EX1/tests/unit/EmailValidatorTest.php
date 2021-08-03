@@ -9,11 +9,21 @@ use PHPUnit\Framework\TestCase;
 class EmailValidatorTest extends TestCase
 {
     /**
+     * @var EmailValidator
+     */
+    private $emailValidator;
+
+    public function setUp(): void
+    {
+        $this->emailValidator = new EmailValidator();
+    }
+
+    /**
      * @dataProvider emailProvider
      */
     public function testIfEmailIsValidatedCorrectly(string $email, bool $isValid): void
     {
-        $this->assertEquals($isValid, EmailValidator::validate($email));
+        $this->assertEquals($isValid, $this->emailValidator->validate($email));
     }
 
     public function emailProvider(): array

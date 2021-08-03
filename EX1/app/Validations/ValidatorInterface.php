@@ -11,5 +11,5 @@ interface ValidatorInterface
      *
      * @return bool
      */
-    public static function validate(string $dataToValidate): bool;
+    public function validate(string $dataToValidate): bool;
 }

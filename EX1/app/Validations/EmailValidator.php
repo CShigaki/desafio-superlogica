@@ -11,7 +11,7 @@ class EmailValidator implements ValidatorInterface
      *
      * @return bool
      */
-    public static function validate(string $dataToValidate): bool
+    public function validate(string $dataToValidate): bool
     {
         return !($dataToValidate === '') &&
             $dataToValidate === filter_var($dataToValidate, FILTER_VALIDATE_EMAIL);
