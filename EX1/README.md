@@ -3,12 +3,14 @@
 Como o exercício define as validações, consulta e inserção como objetivo optei por não usar nenhum framework.
 As validações podem ser encontradas em
 
-```
-app/SignUpValidator
-app/validations/ValidEmail
-app/validations/ValidPassword
-app/validations/ValidZip
-```
+[app/SignUpController](https://github.com/CShigaki/desafio-superlogica/blob/main/EX1/app/SignUpController.php)
+
+[app/Validations/EmailValidator](https://github.com/CShigaki/desafio-superlogica/blob/main/EX1/app/Validations/EmailValidator.php)
+
+[app/Validations/PasswordValidator](https://github.com/CShigaki/desafio-superlogica/blob/main/EX1/app/Validations/PasswordValidator.php)
+
+[app/Validations/ZipValidator](https://github.com/CShigaki/desafio-superlogica/blob/main/EX1/app/Validations/ZipValidator.php)
+
 
 O enunciado deixa explícito que conexões com banco não devem ser criadas mas para tornar esse repo funcional optei como criá-las mesmo assim.
 
