@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Superlogica\Validations;
 
-class ValidPassword implements ValidationInterface
+class PasswordValidator implements ValidatorInterface
 {
     /**
      * @param string $dataToValidate
@@ -17,6 +17,6 @@ class ValidPassword implements ValidationInterface
         $hasNumbers = 1 === preg_match('/\d/', $dataToValidate);
         $hasLetters = 1 === preg_match('/[a-zA-Z]/', $dataToValidate);
 
-        return strlen($dataToValidate) > 8 && $hasNumbers && $hasLetters;
+        return strlen($dataToValidate) >= 8 && $hasNumbers && $hasLetters;
     }
 }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Superlogica\Validations;
 
-class ValidEmail implements ValidationInterface
+class EmailValidator implements ValidatorInterface
 {
     /**
      * @param string $dataToValidate

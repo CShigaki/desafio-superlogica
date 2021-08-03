@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Superlogica\Validations;
 
-interface ValidationInterface
+interface ValidatorInterface
 {
     /**
      * @param string $dataToValidate

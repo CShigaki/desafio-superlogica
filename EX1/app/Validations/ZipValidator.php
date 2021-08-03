@@ -10,7 +10,7 @@ namespace Superlogica\Validations;
  *
  * Class ValidZip
  */
-class ValidZip implements ValidationInterface
+class ZipValidator implements ValidatorInterface
 {
     /**
      * @param string $dataToValidate

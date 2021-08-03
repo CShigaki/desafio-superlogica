@@ -6,14 +6,14 @@ namespace Superlogica\Validations;
 
 use PHPUnit\Framework\TestCase;
 
-class ValidEmailTest extends TestCase
+class EmailValidatorTest extends TestCase
 {
     /**
      * @dataProvider emailProvider
      */
     public function testIfEmailIsValidatedCorrectly(string $email, bool $isValid): void
     {
-        $this->assertEquals($isValid, ValidEmail::validate($email));
+        $this->assertEquals($isValid, EmailValidator::validate($email));
     }
 
     public function emailProvider(): array

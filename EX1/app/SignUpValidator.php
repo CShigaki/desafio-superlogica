@@ -4,15 +4,18 @@ declare(strict_types = 1);
 
 namespace Superlogica;
 
-use Superlogica\Validations\ValidEmail;
-use Superlogica\Validations\ValidPassword;
-use Superlogica\Validations\ValidZip;
+use Superlogica\Validations\EmailValidator;
+use Superlogica\Validations\PasswordValidator;
+use Superlogica\Validations\ZipValidator;
 
 /**
  * Class SignUpValidator
  *
  * Following the example of the Helpers class I created different classes for each validation type
  * and created static functions on each one.
+ *
+ * Since this class uses de ZipValidator and it make requests to an external service,
+ * this will not be tested.
  */
 class SignUpValidator
 {
@@ -30,20 +33,20 @@ class SignUpValidator
             }
         }
 
-        if (!ValidZip::validate($formValues['zip_code'])) {
+        if (!ZipValidator::validate($formValues['zip_code'])) {
             $errors['zip_code'] = 'CEP Inválido';
         }
 
-        if (!ValidPassword::validate($formValues['password'])) {
+        if (!PasswordValidator::validate($formValues['password'])) {
             $errors['password'] = 'A senha deve ter pelo menos 8 caracteres e pelo menos 1 letra e um número';
         }
 
-        if (!ValidEmail::validate($formValues['email'])) {
+        if (!EmailValidator::validate($formValues['email'])) {
             // Same for this field.
             $errors['email'] = 'Email inválido';
         }
 
-        if (Helpers::select('cadastro', $formValues)) {
+        if (Helpers::select('cadastro', $_POST)) {
             $errors['general'] = 'Email ou login já cadastrados';
         }
 

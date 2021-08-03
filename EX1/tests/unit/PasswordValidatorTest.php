@@ -6,14 +6,14 @@ namespace Superlogica\Validations;
 
 use PHPUnit\Framework\TestCase;
 
-class ValidPasswordTest extends TestCase
+class PasswordValidatorTest extends TestCase
 {
     /**
      * @dataProvider passwordProvider
      */
     public function testIfPasswordIsValidatedCorrectly(string $password, bool $isValid): void
     {
-        $this->assertEquals($isValid, ValidPassword::validate($password));
+        $this->assertEquals($isValid, PasswordValidator::validate($password));
     }
 
     public function passwordProvider(): array
@@ -22,6 +22,7 @@ class ValidPasswordTest extends TestCase
             ['abcd12345', true],
             ['abcdefghi', false],
             ['123456789', false],
+            ['1234abcd', true],
             ['asd', false],
             ['123', false],
             ['asd123', false],
