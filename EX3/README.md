@@ -1,11 +1,10 @@
 ## Terceiro Exercicio
 
 Esse SQL pode ser testado usando o próprio container do docker criado no exercício 1.
-- Suba o container com o `make run` caso eles não estejam de pé
+- Suba os containers com o `make run` caso eles não estejam de pé
 - Execute o comando `docker exec -ti mysql bash`
   - Isso te dará acesso à uma linha de comando dentro do container
 - Acesse o banco de dados com o comando `mysql -uroot -proot superlogica`
-- Use o banco `superlogica` com o comando `use superlogica;`
 - Copie as queries do arquivo `Exercicio3.sql` e cole
 
 ### Enunciado
