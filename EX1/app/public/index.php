@@ -2,7 +2,6 @@
 require_once dirname(__DIR__) . '/../vendor/autoload.php';
 
 use Superlogica\SignUpController;
-use Superlogica\Helpers;
 
 ?>
 <html>
